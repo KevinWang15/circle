@@ -1,0 +1,14 @@
+<div (click)="showDetail()">
+  <div class="description">
+    <div class="upper">
+      <h2>{{data.doc_name}}</h2>
+      <span>{{data.type}}</span>
+    </div>
+    <div class="lower">
+      <span class="time">
+        {{data.created_at}}
+      </span>
+      <span class="size">{{data.size_kb}}KB</span>
+    </div>
+  </div>
+</div>

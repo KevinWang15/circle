@@ -1,0 +1,15 @@
+page-forum-page {
+  ion-item {
+    position: relative;
+    .time {
+      position: absolute;
+      right: 34px;
+      top: 34px;
+      font-size: 12px;
+    }
+    .reply-count {
+
+    }
+
+  }
+}

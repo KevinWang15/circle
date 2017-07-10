@@ -1,0 +1,30 @@
+page-message-tab {
+
+  ion-item {
+    position: relative;
+    .light {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      box-shadow: #727272 0px 0px 2px;
+      margin-left: 2px;
+      position: relative;
+      top: -3px;
+    }
+    .red {
+      background: red;
+    }
+    .yellow {
+      background: yellow;
+    }
+    .blue {
+      background: deepskyblue;
+    }
+  }
+  .time {
+    opacity: .3;
+    font-size: 12px;
+    margin-left: 14px;
+  }
+}

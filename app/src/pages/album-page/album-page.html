@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>相册</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="images-wrapper">
+    <div class="image-wrapper" *ngFor="let image of list">
+      <div class="image" [style.background-image]="image.sanitized"
+           (click)="showImage(image.image_url)">
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          alt=""/>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button (click)="upload()">
+        上传照片
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

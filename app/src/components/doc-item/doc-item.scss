@@ -1,0 +1,66 @@
+doc-item {
+  & > div {
+    padding: 10px 0;
+    border-bottom: 1px solid #ececec;
+    display: block;
+    position: relative;
+    .img {
+      top: 10px;
+      left: 10px;
+      position: absolute;
+      width: 80px;
+      height: 65px;
+      display: inline-block;
+      padding: 0;
+      background: #EEE;
+      img {
+        border: 0;
+        width: 100%;
+
+      }
+    }
+    .description {
+      padding: 6px 10px 8px 10px;
+      position: relative;
+      .upper {
+        clear: both;
+        display: block;
+        position: relative;
+        span {
+          position: absolute;
+          right: 10px;
+          top: 0;
+          text-transform: uppercase;
+          color: map_get($colors, 'primary');
+        }
+        h2 {
+          margin: 0;
+          font-size: 16px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          //float: left;
+        }
+      }
+      .lower {
+        clear: both;
+        display: block;
+        position: relative;
+        margin-top: 14px;
+        .time {
+          opacity: 0.3;
+          font-size: 12px;
+          margin-top: 4px;
+          font-weight: lighter;
+        }
+        .size {
+          position: absolute;
+          right: 10px;
+          //top: 0;
+          text-transform: uppercase;
+          color: map_get($colors, 'primary');
+        }
+      }
+    }
+  }
+}

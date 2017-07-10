@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>加入圈子</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        圈子口令
+      </ion-label>
+      <ion-input placeholder="请输入圈子口令" [(ngModel)]="formData.password">
+      </ion-input>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="submit()" [disabled]="!formData.password">
+        提交
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

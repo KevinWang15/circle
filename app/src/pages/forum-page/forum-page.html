@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>论坛</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngIf="!list?.length">
+      论坛中没有任何帖子
+    </ion-item>
+
+    <ion-item *ngFor="let item of list" detail-push (click)="showPostDetail(item)">
+      <ion-avatar item-start>
+        <img [src]="item.owner.avatar_url">
+      </ion-avatar>
+      <h2>{{item.title}}</h2>
+      <h3>{{item.owner.name}}</h3>
+      <p class="time">{{item.created_at}}</p>
+      <p class="reply-count">{{item.reply_count}} 回复</p>
+    </ion-item>
+
+
+    <ion-item *ngIf="finished">
+      没有更多了～
+    </ion-item>
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="onInfinite($event)"
+                       [enabled]="!finished && list && list.length>0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="newPost()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

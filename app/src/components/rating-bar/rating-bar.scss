@@ -1,0 +1,27 @@
+rating-bar {
+  $size: 11px;
+  .anchor {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    .outline {
+      border: 0;
+      outline: none;
+      width: $size*5;
+      height: $size;
+      background-image: url('../assets/icon/o-outline.png');
+      background-size: contain;
+    }
+    .fill {
+      border: 0;
+      outline: none;
+      height: $size;
+      background-image: url('../assets/icon/o-filled.png');
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}

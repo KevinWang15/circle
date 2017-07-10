@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>上传照片</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <multi-image-upload>
+  </multi-image-upload>
+  <button ion-button block (click)="submit()" *ngIf="!imageArray.isUploading">
+    <ion-icon name="checkmark"></ion-icon>
+    上传
+  </button>
+  <button ion-button block (click)="abort()" *ngIf="imageArray.isUploading">
+    <ion-icon name="close"></ion-icon>
+    取消
+  </button>
+
+</ion-content>

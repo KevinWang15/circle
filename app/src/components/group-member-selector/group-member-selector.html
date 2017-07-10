@@ -1,0 +1,10 @@
+<ion-item detail-push (click)="showSelectionPage()">
+  <span *ngIf="!data?.length">
+    没有选中任何人
+  </span>
+
+
+  <ion-avatar *ngFor="let item of data">
+    <img [src]="item.avatar_url">
+  </ion-avatar>
+</ion-item>

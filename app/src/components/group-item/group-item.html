@@ -1,0 +1,16 @@
+<div class="img">
+  <img [src]="data.image_url" alt="">
+  <span class="badge" [hidden]="data.badge_hidden"></span>
+</div>
+<div class="content">
+  <h2>
+    {{data.name}}
+  </h2>
+  <span class="member-count">
+      {{data.member_count}}人
+  </span>
+  <div class="latest-update">
+    [最新消息]: {{data.group_update_text||'(没有任何消息)'}}
+  </div>
+  <!--{{data.group_update_id}}-->
+</div>

@@ -1,0 +1,131 @@
+page-my-tab {
+  .upper {
+    position: relative;
+    background: rgb(235, 235, 235);
+    padding: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    .modify-row {
+      height: 10px;
+      text-align: right;
+      button {
+        position: relative;
+        top: -10px;
+        right: -5px;
+        color: rgb(138, 138, 138);
+        border-color: rgb(138, 138, 138);
+        padding: 0 10px;
+        &.activated {
+          background: transparent !important;
+          opacity: 0.5;
+        }
+      }
+      img {
+        width: 20px;
+      }
+      ion-icon{
+        width: 20px;
+        font-size:24px;
+      }
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid rgb(180, 180, 180);
+    }
+    .nickname {
+      margin-top: 6px;
+      font-size: 18px;
+    }
+    .row {
+      display: flex;
+      & > div {
+        flex: 1;
+        text-align: center;
+      }
+    }
+    .info-row {
+      margin: auto;
+      width: 200px;
+      margin-top: 5px;
+      & > div {
+        border-right: 1px solid #AAA;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:last-of-type {
+          border-right: 0;
+        }
+      }
+    }
+    .pp-row {
+      margin-top: 20px;
+      .number {
+        font-size: 36px;
+        font-weight: lighter;
+        color: map_get($colors, "primary");
+      }
+    }
+    .button-height {
+      height: 30px;
+    }
+    .button-row {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      transform: translateY(-50%);
+      div:first-child {
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      div:last-child {
+        padding-right: 10px;
+        padding-left: 5px;
+      }
+    }
+  }
+  .my-row {
+    display: flex;
+    margin-top: 50px;
+    & > div {
+      flex: 1;
+      text-align: center;
+      padding: 0 10px;
+      & > div {
+        height: 60px;
+        position: relative;
+        margin-bottom: 8px;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin-bottom: 6px;
+          &.docs {
+            width: 47px;
+
+          }
+          &.info {
+            width: 58px;
+
+          }
+          &.group {
+            width: 66px;
+          }
+        }
+      }
+      font-size: 18px;
+    }
+  }
+  .invitation-row {
+    width: 200px;
+    margin: auto;
+    margin-top: 28px;
+    button {
+      padding: 0;
+      min-height: 0;
+      height: 36px;
+    }
+  }
+}

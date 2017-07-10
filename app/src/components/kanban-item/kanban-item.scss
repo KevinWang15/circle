@@ -1,0 +1,54 @@
+kanban-item {
+  ion-card-header {
+    position: relative;
+    .subtasks {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      opacity: .5;
+    }
+  }
+  position: relative;
+  ion-list {
+    & > div {
+      position: relative;
+      ion-item {
+        background: transparent !important;
+      }
+    }
+    .item-checkbox-checked {
+      ion-label {
+        text-decoration: line-through;
+      }
+    }
+    .avatar-list {
+      position: absolute;
+      right: -4px;
+      top: -4px;
+      z-index: 1000;
+      .input-wrapper {
+        padding-right: 27px;
+      }
+      ion-label {
+        overflow: visible;
+      }
+      ion-avatar {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        display: inline-block;
+        margin-right: -27px;
+        overflow: visible;
+      }
+    }
+  }
+  ion-row
+  {
+    ion-col{
+      .button-small{
+        padding-top: 4px;
+      }
+    }
+  }
+}

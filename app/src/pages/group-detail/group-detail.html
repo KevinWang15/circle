@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{groupData.name}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openActionSheet()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list no-border *ngIf="stats">
+    <ion-list-header>
+      功能
+    </ion-list-header>
+    <ion-item (click)="showContacts()">
+      <ion-icon name='contacts' item-start></ion-icon>
+      通讯录
+      <ion-note item-end>
+        {{groupData.member_count}} 联系人
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="showKanban()">
+      <ion-label>
+        看板
+      </ion-label>
+      <ion-icon name='checkmark-circle' item-start></ion-icon>
+      <ion-note item-end>
+        {{stats.kanban}} 进行中
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="showForum()">
+      <ion-icon name='chatboxes' item-start></ion-icon>
+      论坛
+      <ion-note item-end>
+        {{stats.forum}} 帖子
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="showAlbum()">
+      <ion-icon name='albums' item-start></ion-icon>
+      相册
+      <ion-note item-end>
+        {{stats.album}} 张图片
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="showDocs()">
+      <ion-icon name='folder' item-start></ion-icon>
+      网盘
+      <ion-note item-end>
+        {{stats.doc}} 个文件
+      </ion-note>
+    </ion-item>
+
+    <ion-item disabled>
+      <ion-icon name='map' item-start></ion-icon>
+      汇合
+      <ion-note item-end>
+        即将上线
+      </ion-note>
+    </ion-item>
+
+    <ion-item disabled>
+      <ion-icon name='cash' item-start></ion-icon>
+      账本
+      <ion-note item-end>
+        即将上线
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header>
+      设置
+    </ion-list-header>
+
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        接收推送
+      </ion-label>
+      <ion-icon name='notifications' item-start></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

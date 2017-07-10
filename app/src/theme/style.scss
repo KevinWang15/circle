@@ -1,0 +1,24 @@
+.important-toast {
+  padding: 20px;
+  .toast-wrapper {
+    padding: 0 10px;
+    background: transparent !important;
+    .toast-container {
+      padding: 20px 0;
+      background: #333;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+.fake-ion-item {
+  padding-left: 16px;
+  & > .fake-item-inner {
+    padding-right: 8px;
+    border-bottom: 0.55px solid #c8c7cc;
+    .item-inner{
+      border-bottom: 0 !important;
+    }
+  }
+}

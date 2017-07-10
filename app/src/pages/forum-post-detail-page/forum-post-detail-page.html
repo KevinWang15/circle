@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{post.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="post.owner.avatar_url">
+      </ion-avatar>
+      <h2>{{post.owner.name}}</h2>
+      <p>{{post.created_at}}</p>
+    </ion-item>
+    <ion-item>
+      <div [innerHtml]="post.content">
+      </div>
+    </ion-item>
+    <ion-item class="mentioned" [hidden]="!post.mentioned_users?.length">
+      <span>提及到</span>
+      <avatar-array [users]="post.mentioned_users"></avatar-array>
+    </ion-item>
+    <ion-list-header>
+      回复({{post.replies?.length}}条)
+    </ion-list-header>
+    <div *ngFor="let reply of post.replies" class="replies">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="reply.user.avatar_url">
+        </ion-avatar>
+        <h2>{{reply.user.name}}</h2>
+        <p>{{reply.created_at}}</p>
+      </ion-item>
+
+      <ion-item>
+        <div [innerHtml]="reply.content">
+        </div>
+      </ion-item>
+    </div>
+
+  </ion-list>
+
+  <div style="height: 20px;">
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button (click)="reply()">
+        发表回复
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

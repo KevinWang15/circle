@@ -1,0 +1,17 @@
+page-loading-page {
+  .loading {
+    padding: 0;
+    margin: -50px 0 0 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    color: #BBB;
+    ion-spinner {
+      * {
+        stroke: map_get($colors, 'primary');
+      }
+      margin-bottom: 10px;
+    }
+  }
+}

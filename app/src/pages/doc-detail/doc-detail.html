@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>资料详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="!loading">
+    <ion-list no-border>
+      <ion-item>
+        {{data.doc_name}}
+      </ion-item>
+      <ion-item>
+        资料大小：{{data.size_kb}}KB
+      </ion-item>
+      <ion-item>
+        资料类型：{{data.type}}KB
+      </ion-item>
+      <ion-item>
+        资料分类：{{data.category_id}}KB
+      </ion-item>
+      <ion-item *ngIf="data.tags&&data.tags.length">
+        资料Tag：
+        <tag-selector [readOnly]="true" [availableTags]="data.tags"
+                      [selectedTags]="[]"></tag-selector>
+      </ion-item>
+    </ion-list>
+    <div [hidden]="!data.description">
+      <h1 class="with-dot">资料介绍</h1>
+      <div class="description" [innerHTML]="data.description">
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="!loading">
+  <ion-toolbar>
+    <button ion-button block (click)="download()">
+      下载
+    </button>
+  </ion-toolbar>
+</ion-footer>

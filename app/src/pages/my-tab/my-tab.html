@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="upper">
+    <div class="modify-row">
+      <button ion-button round outline small color="light" (click)="modifyInfo()">
+        <img src="assets/icon/modify.png" alt=""/>
+      </button>
+      <!--<button ion-button round outline small color="light" (click)="modifyInfo()">-->
+      <!--<ion-icon name="cog"></ion-icon>-->
+      <!--</button>-->
+    </div>
+    <img [src]="user.avatar_url" alt="" class="avatar" (click)="modifyInfo()"/>
+    <div class="nickname" (click)="modifyInfo()">
+      {{user.name}}
+    </div>
+  </div>
+  <ion-list no-border>
+    <ion-item (click)="modifyInfo()">
+      <ion-label>
+        姓名
+      </ion-label>
+      <div item-content>
+        {{user.name}}
+      </div>
+    </ion-item>
+    <ion-item (click)="modifyInfo()">
+      <ion-label>
+        手机号
+      </ion-label>
+      <div item-content>
+        {{user.mobile||'（未填写）'}}
+      </div>
+    </ion-item>
+    <ion-item (click)="modifyInfo()">
+      <ion-label>
+        Email
+      </ion-label>
+      <div item-content>
+        {{user.email}}
+      </div>
+    </ion-item>
+  </ion-list>
+  <div class="logout-row" padding>
+    <button ion-button color="primary" block outline (click)="logout()">
+      退出登入
+    </button>
+  </div>
+</ion-content>
