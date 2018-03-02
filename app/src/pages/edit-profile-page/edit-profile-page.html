@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>编辑个人信息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        姓名
+      </ion-label>
+      <ion-input placeholder="请输入姓名" [(ngModel)]="formData.name">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        邮箱
+      </ion-label>
+      <ion-input placeholder="请输入邮箱" [(ngModel)]="formData.email">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        电话
+      </ion-label>
+      <ion-input placeholder="请输入电话" [(ngModel)]="formData.mobile">
+      </ion-input>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="save()"
+              [disabled]="!formData.name||!formData.email">
+        提交
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新建看板</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        任务名
+      </ion-label>
+      <ion-input placeholder="请输入任务名" [(ngModel)]="formData.title">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        初始阶段
+      </ion-label>
+      <ion-select [(ngModel)]="formData.stage">
+        <ion-option value="0">Planning</ion-option>
+        <ion-option value="1">Doing</ion-option>
+        <ion-option value="2">Done</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        下阶段截止日期
+      </ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD"
+                    [(ngModel)]="formData.next_stage_deadline"></ion-datetime>
+    </ion-item>
+
+    <div padding>
+      <button color="primary" ion-button block (click)="save()" [disabled]="!formData.title">保存
+      </button>
+    </div>
+  </ion-list>
+
+</ion-content>

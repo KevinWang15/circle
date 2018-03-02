@@ -1,0 +1,11 @@
+page-docs-page {
+  .doc-list-container {
+    height: 100%;
+    .fixed-content, .scroll-content {
+      margin-bottom: 0 !important;
+    }
+  }
+  tag-selector > div {
+    padding: 8px 10px 0 10px;
+  }
+}

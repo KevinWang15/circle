@@ -1,0 +1,110 @@
+h1.with-dot {
+  font-size: 14px;
+  overflow: visible;
+  position: relative;
+  margin-left: 6px;
+  padding-left: 14px;
+  &:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: map_get($colors, 'primary');
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -3px;
+  }
+}
+
+page-group-tab, page-docs-tab {
+  .none-hint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  ion-fab {
+    opacity: 0.9 !important;
+    button {
+      //width: 42px !important;
+      //height: 42px !important;
+    }
+    ion-fab-list {
+      .fab .button-inner {
+        color: rgb(127, 127, 127) !important;
+      }
+    }
+  }
+  .scroll-content, .fixed-content {
+    margin-bottom: 0 !important;
+  }
+  & > div {
+    height: 100%;
+    background: white;
+  }
+  .segment-ios .segment-button {
+    font-size: 16px;
+  }
+  .segment-ios .segment-button:last-of-type {
+    border-radius: 0 100px 100px 0 !important;
+  }
+
+  .segment-ios .segment-button:first-of-type {
+    border-radius: 100px 0 0 100px !important;
+  }
+
+}
+
+.divider-shadow {
+  width: 100%;
+  height: 5px;
+  margin-top: 0px;
+  background: linear-gradient(rgba(247, 247, 247, 1), rgba(255, 255, 255, 0));
+  margin-bottom: -3px;
+  z-index: 1000;
+  position: absolute;
+}
+
+page-group-tab {
+  .body {
+    margin-top: 0px;
+    height: calc(100% - 32px) !important;
+    //padding: 0 10px;
+  }
+  .explore, .my {
+    height: 100%;
+    padding-bottom: 9px;
+  }
+  h1.with-dot {
+    //margin-bottom: 4px;
+  }
+
+  .upload {
+    .howto {
+      opacity: 0.6;
+      padding: 20px;
+      line-height: 1.5;
+      p {
+        margin-bottom: 14px;
+        margin-top: 0;
+      }
+      height: 100%;
+    }
+    height: 100%;
+    .button-bar {
+      position: absolute;
+      bottom: 60px;
+      width: 100%;
+      padding: 0 20px;
+      z-index: 10000;
+      button {
+        margin: auto;
+        width: 70%;
+        padding: 16px;
+      }
+    }
+  }
+
+}

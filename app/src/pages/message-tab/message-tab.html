@@ -1,0 +1,23 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="list">
+    <ion-item *ngIf="list.length==0">
+      您没有任何消息
+    </ion-item>
+    <ion-item *ngFor="let item of list" (click)="onClick(item)">
+      <ion-label>
+        <i class="light" [ngClass]="{'blue':item.level==0,'yellow':item.level==1,'red':item.level==2}"></i>
+        {{item.text}}
+        <div class="time">
+          {{item.created_at}}
+        </div>
+      </ion-label>
+      <ion-avatar item-end *ngIf="item.trigger_user?.avatar_url">
+        <img [src]="item.trigger_user?.avatar_url" alt="">
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>

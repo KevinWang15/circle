@@ -1,0 +1,45 @@
+<div>
+  <!--<div padding style="padding-bottom: 14px;">-->
+  <!--<ion-segment [(ngModel)]="segment">-->
+  <!--<ion-segment-button value="my">-->
+  <!--我的社群-->
+  <!--</ion-segment-button>-->
+  <!--<ion-segment-button value="upload">-->
+  <!--新建社群-->
+  <!--</ion-segment-button>-->
+  <!--</ion-segment>-->
+  <!--</div>-->
+  <div *ngIf="myGroups?.length==0" class="none-hint">
+    <img src="assets/img/no-groups.png" alt="">
+  </div>
+  <div class="body">
+    <div class="my" [hidden]="segment!='my'">
+      <ion-content>
+        <ion-refresher (ionRefresh)="loadData($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+        <div style="padding: 0 10px;">
+          <group-item [data]="item" *ngFor="let item of myGroups" (click)="showGroupDetail(item)"></group-item>
+        </div>
+
+        <ion-fab right bottom>
+          <button ion-fab color="light"><img src="assets/icon/group.png" alt=""></button>
+          <ion-fab-list side="left">
+            <button ion-fab (click)="showAddGroup()" >
+              加入
+            </button>
+            <button ion-fab (click)="showNewGroup()">
+              创建
+            </button>
+          </ion-fab-list>
+        </ion-fab>
+        <!--<ion-fab right bottom>-->
+        <!--<button ion-fab color="primary">-->
+        <!--<ion-icon name="add"></ion-icon>-->
+        <!--</button>-->
+        <!--</ion-fab>-->
+      </ion-content>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div>
+  <div *ngFor="let item of items">
+    <doc-item [data]="item"></doc-item>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)"
+                       [enabled]="!finished && items && items.length>0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <div class="no-more" *ngIf="finished">
+    没有更多了
+  </div>
+</div>

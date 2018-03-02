@@ -1,0 +1,14 @@
+avatar-array {
+  ion-item {
+    padding: 0 !important;
+  }
+  ion-avatar {
+    img {
+      width: 34px !important;
+      height: 34px !important;
+    }
+    display: inline-block;
+    margin-right: 8px;
+    overflow: visible;
+  }
+}

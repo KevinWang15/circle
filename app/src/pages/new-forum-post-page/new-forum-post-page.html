@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新建帖子</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        标题
+      </ion-label>
+      <ion-input placeholder="请输入标题" [(ngModel)]="formData.title">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>
+        内容
+      </ion-label>
+      <div item-content>
+        <div [froalaEditor] [(froalaModel)]="formData.content"></div>
+      </div>
+    </ion-item>
+
+    <div class="fake-ion-item">
+      <div class="fake-item-inner">
+        <ion-label stacked>
+          提及
+        </ion-label>
+        <div item-content>
+          <group-member-selector [group_id]="group.id"
+                                 [data]="formData.mentioned"></group-member-selector>
+        </div>
+      </div>
+    </div>
+
+    <div padding>
+      <button color="primary" ion-button block (click)="save()" [disabled]="!formData.title">保存
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

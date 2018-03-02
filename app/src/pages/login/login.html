@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="logo">
+    <img src="assets/img/logo-white.png" alt="" class="logo-img">
+  </div>
+  <div class="wrapper">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="formData.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>密码</ion-label>
+        <ion-input type="password" [(ngModel)]="formData.password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="button-bar">
+      <button ion-button block class="login-button" color="light-primary" (click)="login()">
+        登陆
+      </button>
+      <button ion-button block outline class="register-button" color="light-primary" (click)="register()">
+        注册
+      </button>
+    </div>
+  </div>
+</ion-content>
+<div class="footer-text">
+  {{config.company}}
+</div>

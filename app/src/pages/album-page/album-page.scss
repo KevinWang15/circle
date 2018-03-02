@@ -1,0 +1,43 @@
+page-album-page {
+
+  ion-footer {
+    padding: 10px;
+    ion-toolbar {
+      .toolbar-background {
+        background: map_get($colors, 'primary') !important;
+      }
+      ion-buttons {
+        display: flex !important;
+        margin: 0 !important;
+        button {
+          flex: 1 !important;
+          color: white !important;
+          margin: 0 !important;
+          .button-inner {
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .images-wrapper {
+    font-size: 0;
+    .image-wrapper {
+      display: inline-block;
+      margin: 0;
+      width: 33.3333%;
+      box-sizing: border-box;
+      padding: 1px;
+      position: relative;
+      .image {
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

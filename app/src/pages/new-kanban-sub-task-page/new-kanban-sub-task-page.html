@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新的子任务</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        子任务名
+      </ion-label>
+      <ion-input placeholder="请输入子任务名" [(ngModel)]="formData.title">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        截止日期
+      </ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD"
+                    [(ngModel)]="formData.deadline"></ion-datetime>
+    </ion-item>
+    <div class="fake-ion-item">
+      <div class="fake-item-inner">
+        <ion-label stacked>
+          分配给
+        </ion-label>
+        <div item-content>
+          <group-member-selector [group_id]="kanban.group_id"
+                                 [data]="formData.assigned_to"></group-member-selector>
+        </div>
+      </div>
+    </div>
+    <div padding>
+      <button color="primary" ion-button block (click)="save()" [disabled]="!formData.title">保存
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>网盘</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="doc-list-container">
+  <ion-refresher (ionRefresh)="onTagChanged($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <tag-selector [selectedTags]="tagFilter" [availableTags]="fileTags"
+                [showClearBtn]="true" (onTagChanged)="onTagChanged()"></tag-selector>
+  <doc-list [items]="docItems" (onInfinite)="onInfinite($event)"
+            [finished]="isFinished">
+  </doc-list>
+
+  <ion-fab right bottom style="bottom: 50px;">
+    <button ion-fab color="light" (click)="showUpload()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

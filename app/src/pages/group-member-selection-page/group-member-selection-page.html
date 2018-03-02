@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>选择成员</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list no-border>
+    <ion-item *ngFor="let item of list">
+      <ion-checkbox color="primary" [(ngModel)]="item.selected"></ion-checkbox>
+      <ion-avatar item-start>
+        <img [src]="item.avatar_url">
+      </ion-avatar>
+      <ion-label>
+        {{item.name}}
+      </ion-label>
+    </ion-item>
+
+    <div padding>
+      <button color="primary" ion-button block (click)="submit()">确定</button>
+    </div>
+  </ion-list>
+</ion-content>

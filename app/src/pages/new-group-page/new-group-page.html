@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新建圈子</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        圈子名
+      </ion-label>
+      <ion-input placeholder="请输入圈子名" [(ngModel)]="formData.name">
+      </ion-input>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="save()" [disabled]="!formData.name">
+        提交
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

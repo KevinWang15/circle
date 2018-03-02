@@ -1,0 +1,5 @@
+export const env = {
+  server_url: "http://ps.server/",
+  prod: false,
+  qiniu_domain: ""
+};

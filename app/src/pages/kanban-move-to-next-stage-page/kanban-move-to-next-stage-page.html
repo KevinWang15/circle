@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>进入下一阶段</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>
+        下阶段截止日期
+      </ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD"
+                    [(ngModel)]="formData.next_stage_deadline"></ion-datetime>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="save()">
+        提交
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

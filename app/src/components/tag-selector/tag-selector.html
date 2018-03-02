@@ -1,0 +1,9 @@
+<div *ngIf="selectedTags">
+  <span class="option" *ngFor="let item of availableTags">
+    <button ion-button small round (click)="toggleTag(item)"
+            [outline]="selectedTags.indexOf(item)<0">
+      {{item}}
+    </button>
+  </span>
+  <a *ngIf="showClearBtn&&selectedTags.length>0" (click)="clear()">清空</a>
+</div>

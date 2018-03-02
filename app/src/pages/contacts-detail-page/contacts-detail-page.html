@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>联系人详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="upper">
+    <img [src]="data.avatar_url" alt="" class="avatar"/>
+    <div class="nickname">
+      {{data.name}}
+    </div>
+  </div>
+  <ion-list no-border>
+    <ion-item>
+      <ion-label>
+        姓名
+      </ion-label>
+      <div item-content>
+        {{data.name}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        手机号
+      </ion-label>
+      <div item-content>
+        {{data.mobile||'（未填写）'}}
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Email
+      </ion-label>
+      <div item-content>
+        {{data.email}}
+      </div>
+    </ion-item>
+
+    <div padding>
+      <button color="primary" ion-button block (click)="save()">保存到通讯录</button>
+    </div>
+  </ion-list>
+</ion-content>

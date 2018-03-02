@@ -1,0 +1,13 @@
+page-upload-docs {
+  .file-missing, .file-ok {
+    padding: 10px;
+    position: relative;
+    top: 6px;
+  }
+  .file-missing {
+    color: red;
+  }
+  .file-ok {
+    color: green;
+  }
+}

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>通讯录</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list no-border>
+    <ion-item *ngFor="let item of list" detail-push (click)="showContactsDetail(item)">
+      <ion-avatar item-start>
+        <img [src]="item.avatar_url">
+      </ion-avatar>
+      {{item.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>

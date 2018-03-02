@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>上传文件</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <div padding>
+      <div style="font-size: 15px;margin-bottom: 4px;">
+        请登入 file-upload.kevinwang.cc 并
+      </div>
+      <div>
+        <button ion-button round small color="primary" (click)="scanQr()">点击扫码</button>
+        <span class="file-missing" *ngIf="!formData.file_url"><ion-icon name="close"></ion-icon> 未收到文件</span>
+        <span class="file-ok" *ngIf="formData.file_url"><ion-icon name="checkmark"></ion-icon> 已收到文件</span>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label stacked>
+        文件名
+      </ion-label>
+      <ion-input placeholder="请输入文件名" [(ngModel)]="formData.name">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        文件标签
+      </ion-label>
+      <div item-end>
+        <div *ngFor="let item of formData.tags; let i=index">
+          <ion-input placeholder="请输入Tag" [(ngModel)]="formData.tags[i]">
+          </ion-input>
+        </div>
+        <button ion-button round small color="primary" (click)="newTag()">
+          <ion-icon name="add" item-start></ion-icon>
+          添加Tag
+        </button>
+      </div>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="save()"
+              [disabled]="!formData.name||!formData.file_url">
+        提交
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

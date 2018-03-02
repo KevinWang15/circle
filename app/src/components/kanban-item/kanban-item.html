@@ -1,0 +1,41 @@
+<ion-card>
+  <ion-card-header>
+    {{data.title}}
+
+    <div class="subtasks">
+      {{data.subtasks?.length}}个子任务
+    </div>
+
+  </ion-card-header>
+  <ion-list>
+    <div *ngFor="let subtask of data.subtasks">
+      <ion-item>
+        <ion-label>{{subtask.title}}</ion-label>
+        <ion-checkbox [disabled]="data.stage>=2" color="primary" [(ngModel)]="subtask.finished"
+                      (ngModelChange)="setSubTaskFinished(subtask)"></ion-checkbox>
+      </ion-item>
+      <div *ngIf="subtask.assigned_to?.length" class="avatar-list">
+        <ion-item>
+          <ion-avatar *ngFor="let user of subtask.assigned_to">
+            <img [src]="user.avatar_url" alt="">
+          </ion-avatar>
+        </ion-item>
+      </div>
+    </div>
+    <button ion-item (click)="newSubTask()" *ngIf="data.stage<2">
+      <ion-icon name="add" item-start></ion-icon>
+      添加子任务
+    </button>
+  </ion-list>
+  <ion-row [hidden]="data.stage>=2">
+    <ion-col>
+      <button ion-button icon-left clear small *ngIf="data.stage<2" (click)="moveToNextStage()">
+        阶段完成
+      </button>
+    </ion-col>
+    <ion-col>
+      <ion-label> 阶段截止: {{data.next_stage_deadline}}
+      </ion-label>
+    </ion-col>
+  </ion-row>
+</ion-card>

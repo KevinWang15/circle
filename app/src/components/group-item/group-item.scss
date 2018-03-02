@@ -1,0 +1,63 @@
+group-item {
+  $gray: rgb(210, 210, 210);
+  $img-size: 60px;
+  padding: 4px 0;
+
+  border-bottom: 1px solid #EEE;
+  .latest-update {
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: $gray;
+  }
+  &:last-of-type {
+    border-bottom: 0;
+  }
+  position: relative;
+  display: block;
+  min-height: ($img-size+20px);
+  .content {
+    margin-top: 8px;
+    padding-left: ($img-size+8px);
+    position: relative;
+    h2 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 20px;
+      margin-bottom: 10px;
+      margin-top: 0px;
+    }
+
+    .member-count {
+      position: absolute;
+      color: $gray;
+      right: 10px;
+      top: 3px;
+    }
+  }
+  .img {
+    width: $img-size;
+    height: $img-size;
+    background: #EEE;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .badge {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #e43920;
+      position: absolute;
+      right: -5px;
+      top: -5px;
+    }
+  }
+}

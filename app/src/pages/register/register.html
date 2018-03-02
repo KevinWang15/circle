@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>注册新账号</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>邮箱</ion-label>
+      <ion-input type="email" [(ngModel)]="formData.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>密码</ion-label>
+      <ion-input type="password" [(ngModel)]="formData.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="formData.name"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button color="primary" block [disabled]="!formData.name||!formData.password||!formData.email"
+            (click)="submit()">
+      提交
+    </button>
+  </div>
+</ion-content>

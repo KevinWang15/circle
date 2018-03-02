@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>发表回复</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <div item-content>
+        <div [froalaEditor] [(ngModel)]="formData.content"></div>
+      </div>
+    </ion-item>
+    <div padding>
+      <button color="primary" ion-button block (click)="reply()">
+        发表回复
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

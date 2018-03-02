@@ -1,0 +1,13 @@
+page-new-forum-post-page {
+  [item-content] {
+    margin-top: 10px;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  ion-list > ion-item:nth-child(2) {
+    padding-right: 7px;
+    .item-inner {
+      border-bottom: 0 !important;
+    }
+  }
+}

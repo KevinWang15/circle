@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>看板</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="loadData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-list-header>
+      Planning ({{list['planning'].length}})
+    </ion-list-header>
+    <kanban-item *ngFor="let item of list['planning']" [data]="item"
+                 (onNewSubTask)="newSubTask(item)"
+                 (onMoveToNextStage)="moveToNextStage(item)"
+    >
+    </kanban-item>
+    <ion-list-header>
+      Doing ({{list['doing'].length}})
+    </ion-list-header>
+    <kanban-item *ngFor="let item of list['doing']" [data]="item"
+                 (onNewSubTask)="newSubTask(item)"
+                 (onMoveToNextStage)="moveToNextStage(item)">
+    </kanban-item>
+    <ion-list-header>
+      Done ({{list['done'].length}})
+    </ion-list-header>
+    <kanban-item *ngFor="let item of list['done']" [data]="item"
+                 (onNewSubTask)="newSubTask(item)">
+    </kanban-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="newKanban()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
