@@ -11,6 +11,12 @@
 
 64页PDF详细讲解软件工程化开发全过程。链接：[圈子App - 总报告 PDF](https://github.com/KevinWang15/circle/blob/master/%E5%9C%88%E5%AD%90App%20-%20%E6%80%BB%E6%8A%A5%E5%91%8A.pdf)
 
+### 开题报告PPT
+简明阐述我们为什么做这个APP。链接：[开题报告](https://github.com/KevinWang15/circle/blob/master/%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A.pptx)
+
+### 技术分享
+技术选型与系统架构&为什么。链接：[技术分享](https://github.com/KevinWang15/circle/blob/master/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB.pptx)
+
 ## 设计宗旨
 * 人和人之间形成各种各样的圈子（E.g. 班级、寝室、实验室、社团、公司）
 
